@@ -5,6 +5,7 @@
  */
 
 public class NBody {
+	
 	public static double readRadius (String fileName) {
 		In inFile = new In(fileName);
 		
@@ -56,6 +57,9 @@ public class NBody {
 		double T = Double.valueOf(args[0]); // the arguments come in as Strings. 
 		double dt = Double.valueOf(args[1]);
 		String filename = args[2];
+		In inFile = new In(filename);
+		
+		int N = inFile.readInt();
 
 		/** 
 		 *  After your main method has read everything from the files, it’s time to get drawing. 
