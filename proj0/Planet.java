@@ -28,7 +28,7 @@ public class Planet {
 	public Planet (Planet b) {
 		xxPos = b.xxPos;
 		xxVel = b.xxVel;
-		yyPos = b.yyVel;
+		yyPos = b.yyPos;
 		yyVel = b.yyVel;
 		mass = b.mass;
 		imgFileName = b.imgFileName;
