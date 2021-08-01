@@ -30,8 +30,8 @@ public class NBody {
 
 		// read 1 row - N; read 2 row - radius of u; read 3 row- planet 1; read 4 row - planet 2....read 7 row
 		// -planet 5; planet arrays
-		Planet[] allPlanets = new Planet[5];
-		for(int i = 0; i < 5; i += 1) {
+		Planet[] allPlanets = new Planet[N];
+		for(int i = 0; i < N; i += 1) {
 
 			/**
 		     *  There are N rows, and each row contains 6 values.
@@ -82,8 +82,8 @@ public class NBody {
 		 */
 		double time = 0;
 		while (time < T) {
-			double[] xForces = new double[5];
-			double[] yForces = new double[5];
+			double[] xForces = new double[N];
+			double[] yForces = new double[N];
 			int i = 0;
 			for (Planet p : allPlanets) {
 				xForces[i] = p.calcNetForceExertedByX(allPlanets);
