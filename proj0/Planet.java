@@ -12,7 +12,7 @@ public class Planet {
 	public double mass;
 	public String imgFileName; 
 	// The name of the file that corresponds to the image that depicts the body
-	public static double gConstant = 6.67e-11;
+	private static final double gConstant = 6.67e-11;
 	// Hint: It is good practice to declare any constants as a ‘static final’ variable in your class, and to use that variable anytime you wish to use the constant.
 	// ??
 	public Planet (double xP, double yP, double xV,
