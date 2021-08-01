@@ -67,6 +67,7 @@ public class Planet {
 		return netForceX;
 	}
 	public double calcNetForceExertedByY (Planet[] allPlanets) {
+		
 		/**
 		 * Take in an array of Planets and calculate the net X force 
 		 * exerted by all planets in that array upon the current Planet
@@ -79,4 +80,26 @@ public class Planet {
 		}
 		return netForceY;
 	}
+	public void update (double dt, double fX, double fY) {
+
+		/**
+		 * Determines how much the forces exerted on the planet will 
+		 * cause that planet to accelerate, and the resulting change 
+		 * in the planet’s velocity and position in a small period of time dt.
+		 */
+
+		// acceleration
+		double aNetX = fX / this.mass;
+		double aNetY = fY / this.mass;
+		// velocity
+		this.xxVel += dt * aNetX;
+		this.yyVel += dt * aNetY;
+		// pos
+		this.xxPos += dt * this.xxVel;
+		this.yyPos += dt * this.yyVel;
+	}
+	public void draw () {
+		StdDraw.picture(this.xxPos, this.yyPos, "images/" + this.imgFileName);
+		
+	}	
 }
