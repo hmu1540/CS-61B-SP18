@@ -5,7 +5,13 @@
 public class DebugExercise1 {
     public static int divideThenRound(int top, int bottom) {
         int quotient = top / bottom;
-        int result = Math.round(quotient);
+        int remainder = top % bottom;
+        int result;
+        if (remainder < 0.5 * bottom) {
+            result = quotient;
+        } else {
+            result = quotient + 1;
+        }
         return result;
     }
 
