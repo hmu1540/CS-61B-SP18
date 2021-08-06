@@ -81,8 +81,26 @@ public class IntList {
      */
 
     public static IntList dcatenate(IntList A, IntList B) {
-        //TODO:  fill in method
-        return null;
+        /* Recursive and destructive way: level*** */
+        if (A == null) {
+            return B;
+        } else {
+            A.rest = dcatenate(A.rest, B);
+        }
+        return A; // A returned each time we call dcatenate, but we actually only need the last A
+
+        /* Iterative and destructive way of cat method: level**** */
+      /*  IntList C = new IntList(A.first, A.rest);
+        if (A == null) {
+            A = B;
+        } esle {
+            A.rest = B;
+            while (C != null) {
+                A.first = C.first;
+                C = C.rest;
+            }
+            A.rest = A;
+        }*/
     }
 
     /**
@@ -90,8 +108,13 @@ public class IntList {
      * * elements of B.  May NOT modify items of A.  Use 'new'.
      */
     public static IntList catenate(IntList A, IntList B) {
-        //TODO:  fill in method
-        return null;
+        /* Recursive and non-destructive way: level* */
+        if (A == null) {
+            return B;
+        }
+        return new IntList(A.first, catenate(A.rest, B));
+        /* Iterative and non-destructive way of cat method: */
+        //
     }
 
 
